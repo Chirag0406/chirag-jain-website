@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+/* bootstrap scss override
+$theme-colors: (
+  "primary": #666699,
+); */
+
+$font-stack: 'Roboto', Helvetica, sans-serif!important;
+
+body {
+  font-family: $font-stack;
+  height: 100vh;
+  background-image: url('../img/bg.png');
+  background-repeat: repeat;
+  color: white;
+}
