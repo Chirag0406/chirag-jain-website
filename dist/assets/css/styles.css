@@ -6,8 +6,8 @@ $theme-colors: (
 body {
   font-family: "Roboto", Helvetica, sans-serif !important;
   height: 100vh;
-  background-image: url(../img/bg.png);
   background-repeat: repeat;
+  background-color: wheat;
   color: white; }
 
 /*!

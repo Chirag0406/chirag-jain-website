@@ -97,22 +97,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @scss/styles.scss */ "./src/assets/scss/styles.scss");
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
- // import logoImg from "@img/logo.png";
-// window.addEventListener('click', (ev) => {
-//     const elm = ev.target;
-//     const selector = elm.getAttribute('data-target');
-//     collapse(selector, 'toggle');
-// }, false);
-// const fnmap = {
-//     'toggle': 'toggle',
-//     'show': 'add',
-//     'hide': 'remove'
-// };
-// const collapse = (selector, cmd) => {
-//     document.querySelector(selector).classList[fnmap[cmd]]('show');
-// }
-// let filename = logoImg.substring(logoImg.lastIndexOf('/') + 1);
-// logo.src = `assets/img/${filename}`;
 
 var message = "Hello Webpack";
 console.log(" Message is: ".concat(message));
