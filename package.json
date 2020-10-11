@@ -42,7 +42,9 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.7.2",
-    "bootstrap": "^4.3.1"
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.5.1",
+    "typed.js": "^2.0.11"
   }
 }
