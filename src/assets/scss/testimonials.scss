@@ -1,0 +1,87 @@
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials {
+  .testimonial-item {
+    box-sizing: content-box;
+    text-align: center;
+    min-height: 320px;
+    .testimonial-img {
+      width: 90px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0 5px 0;
+      color: #111;
+    }
+    h4 {
+      font-size: 14px;
+      color: #999;
+      margin: 0;
+    }
+
+    .fa-quote-left {
+      color: #c3e8fa;
+      font-size: 26px;
+      display: inline-block;
+      left: -5px;
+      position: relative;
+    }
+    .fa-quote-right {
+      color: #c3e8fa;
+      font-size: 26px;
+      display: inline-block;
+      right: -5px;
+      position: relative;
+      top: 10px;
+    }
+    p {
+      font-style: italic;
+      margin: 0 15px 15px 15px;
+      padding: 20px;
+      background: #fff;
+      position: relative;
+      margin-bottom: 35px;
+      border-radius: 6px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 20px solid #fff;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: calc(50% - 20px);
+      }
+    }
+  }
+
+  .tns-nav > [aria-controls] {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 0;
+  }
+
+  .tns-nav-active {
+    background-color: #149ddd !important;
+  }
+
+  .tns-nav {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .testimonials {
+    margin: 30px 10px;
+  }
+}

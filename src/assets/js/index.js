@@ -1,7 +1,10 @@
-import "@scss/styles.scss";
+import "../scss/styles.scss";
 import Typed from "typed.js";
 import profile from "../img/profile.jpg";
+import { tns } from "tiny-slider/src/tiny-slider.js";
 var $ = require("jquery");
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 !(function ($) {
   "use strict";
@@ -20,43 +23,41 @@ var $ = require("jquery");
   var typed = new Typed(".typed", options);
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on("click", ".nav-menu a, .scrollto", function (e) {
-    if (
-      location.pathname.replace(/^\//, "") ==
-        this.pathname.replace(/^\//, "") &&
-      location.hostname == this.hostname
-    ) {
-      e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
-        var scrollto = target.offset().top;
+  // $(document).on("click", ".nav-menu a, .scrollto", function (e) {
+  //   if (
+  //     location.pathname.replace(/^\//, "") ==
+  //       this.pathname.replace(/^\//, "") &&
+  //     location.hostname == this.hostname
+  //   ) {
+  //     e.preventDefault();
+  //     var target = $(this.hash);
+  //     if (target.length) {
+  //       var scrollto = target.offset().top;
 
-        $("html, body").animate(
-          {
-            scrollTop: scrollto,
-          },
-          1500,
-          "easeInOutExpo"
-        );
+  //       $("html, body").animate(
+  //         {
+  //           scrollTop: scrollto,
+  //         },
+  //         1500,
+  //         "easeInOutExpo"
+  //       );
 
-        if ($(this).parents(".nav-menu, .mobile-nav").length) {
-          $(".nav-menu .active, .mobile-nav .active").removeClass("active");
-          $(this).closest("li").addClass("active");
-        }
+  //       if ($(this).parents(".nav-menu, .mobile-nav").length) {
+  //         $(".nav-menu .active, .mobile-nav .active").removeClass("active");
+  //         $(this).closest("li").addClass("active");
+  //       }
 
-        if ($("body").hasClass("mobile-nav-active")) {
-          $("body").removeClass("mobile-nav-active");
-          $(".mobile-nav-toggle i").toggleClass(
-            "icofont-navigation-menu icofont-close"
-          );
-        }
-        return false;
-      }
-    }
-  });
+  //       if ($("body").hasClass("mobile-nav-active")) {
+  //         $("body").removeClass("mobile-nav-active");
+  //         $(".mobile-nav-toggle i").toggleClass("fab fa-bars fas fa-times");
+  //       }
+  //       return false;
+  //     }
+  //   }
+  // });
 
   // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function () {
+  $(function () {
     if (window.location.hash) {
       var initial_nav = window.location.hash;
       if ($(initial_nav).length) {
@@ -74,19 +75,15 @@ var $ = require("jquery");
 
   $(document).on("click", ".mobile-nav-toggle", function (e) {
     $("body").toggleClass("mobile-nav-active");
-    $(".mobile-nav-toggle i").toggleClass(
-      "icofont-navigation-menu icofont-close"
-    );
+    $(".mobile-nav-toggle i").toggleClass("fab fa-bars fas fa-times");
   });
 
-  $(document).click(function (e) {
+  $(document).on("click", function (e) {
     var container = $(".mobile-nav-toggle");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       if ($("body").hasClass("mobile-nav-active")) {
         $("body").removeClass("mobile-nav-active");
-        $(".mobile-nav-toggle i").toggleClass(
-          "icofont-navigation-menu icofont-close"
-        );
+        $(".mobile-nav-toggle i").toggleClass("fab fa-bars fas fa-times");
       }
     }
   });
@@ -115,5 +112,62 @@ var $ = require("jquery");
         $(".nav-menu ul:first li:first").addClass("active");
       }
     });
+  });
+
+  // Back to top button
+  // $(window).scroll(function () {
+  //   if ($(this).scrollTop() > 100) {
+  //     $(".back-to-top").fadeIn("slow");
+  //   } else {
+  //     $(".back-to-top").fadeOut("slow");
+  //   }
+  // });
+
+  // $(".back-to-top").click(function () {
+  //   $("html, body").animate(
+  //     {
+  //       scrollTop: 0,
+  //     },
+  //     1500,
+  //     "easeInOutExpo"
+  //   );
+  //   return false;
+  // });
+
+  // Testimonials carousel (uses the Tiny slider 2 library)
+  var slider = tns({
+    container: ".testimonials-carousel",
+    loop: true,
+    slideBy: "1",
+    autoplay: true,
+    nav: true,
+    navPosition: "bottom",
+    controls: false,
+    autoplayButtonOutput: false,
+    mouseDrag: true,
+    speed: 400,
+    responsive: {
+      640: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      992: {
+        items: 3,
+      },
+    },
+  });
+
+  // Init AOS
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      // easing: "ease-in-out-back",
+      once: true,
+    });
+  }
+  $(window).on("load", function () {
+    aos_init();
   });
 })($);

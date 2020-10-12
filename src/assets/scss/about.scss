@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+.about {
+  .content {
+    h3 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #173b6c;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        list-style-type: none;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        strong {
+          padding-right: 5px;
+        }
+      }
+      i {
+        font-size: 20px;
+        padding-right: 5px;
+        color: #149ddd;
+      }
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
