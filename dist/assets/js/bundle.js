@@ -16109,8 +16109,8 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
   function aos_init() {
     aos__WEBPACK_IMPORTED_MODULE_4___default.a.init({
       duration: 1000,
-      // easing: "ease-in-out-back",
-      once: true
+      easing: "ease-in-out-back" //once: true,
+
     });
   }
 
