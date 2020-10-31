@@ -15984,36 +15984,33 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
     backDelay: 2000
   };
   var typed = new typed_js__WEBPACK_IMPORTED_MODULE_1___default.a(".typed", options); // Smooth scroll for the navigation menu and links with .scrollto classes
-  // $(document).on("click", ".nav-menu a, .scrollto", function (e) {
-  //   if (
-  //     location.pathname.replace(/^\//, "") ==
-  //       this.pathname.replace(/^\//, "") &&
-  //     location.hostname == this.hostname
-  //   ) {
-  //     e.preventDefault();
-  //     var target = $(this.hash);
-  //     if (target.length) {
-  //       var scrollto = target.offset().top;
-  //       $("html, body").animate(
-  //         {
-  //           scrollTop: scrollto,
-  //         },
-  //         1500,
-  //         "easeInOutExpo"
-  //       );
-  //       if ($(this).parents(".nav-menu, .mobile-nav").length) {
-  //         $(".nav-menu .active, .mobile-nav .active").removeClass("active");
-  //         $(this).closest("li").addClass("active");
-  //       }
-  //       if ($("body").hasClass("mobile-nav-active")) {
-  //         $("body").removeClass("mobile-nav-active");
-  //         $(".mobile-nav-toggle i").toggleClass("fab fa-bars fas fa-times");
-  //       }
-  //       return false;
-  //     }
-  //   }
-  // });
-  // Activate smooth scroll on page load with hash links in the url
+
+  $(document).on("click", ".nav-menu a, .scrollto", function (e) {
+    if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+      e.preventDefault();
+      var target = $(this.hash);
+
+      if (target.length) {
+        var scrollto = target.offset().top;
+        $("html, body").animate({
+          scrollTop: scrollto
+        }, 1000 // "easeInOutExpo"
+        );
+
+        if ($(this).parents(".nav-menu, .mobile-nav").length) {
+          $(".nav-menu .active, .mobile-nav .active").removeClass("active");
+          $(this).closest("li").addClass("active");
+        }
+
+        if ($("body").hasClass("mobile-nav-active")) {
+          $("body").removeClass("mobile-nav-active");
+          $(".mobile-nav-toggle i").toggleClass("fab fa-bars fas fa-times");
+        }
+
+        return false;
+      }
+    }
+  }); // Activate smooth scroll on page load with hash links in the url
 
   $(function () {
     if (window.location.hash) {
@@ -16023,7 +16020,8 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
         var scrollto = $(initial_nav).offset().top;
         $("html, body").animate({
           scrollTop: scrollto
-        }, 1500, "easeInOutExpo");
+        }, 1000 // "easeInOutExpo"
+        );
       }
     }
   });
@@ -16108,8 +16106,8 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 
   function aos_init() {
     aos__WEBPACK_IMPORTED_MODULE_4___default.a.init({
-      duration: 1000,
-      easing: "ease-in-out-back" //once: true,
+      duration: 1000 // easing: "ease-in-out-back",
+      //once: true,
 
     });
   }
