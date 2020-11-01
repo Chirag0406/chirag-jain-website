@@ -140,21 +140,22 @@ import "aos/dist/aos.css";
     loop: true,
     slideBy: "1",
     autoplay: true,
+    autoplayTimeout: 5000,
     nav: true,
     navPosition: "bottom",
     controls: false,
     autoplayButtonOutput: false,
     mouseDrag: true,
-    speed: 400,
+    speed: 1000,
     responsive: {
       640: {
         items: 1,
       },
       768: {
-        items: 2,
+        items: 1,
       },
       992: {
-        items: 3,
+        items: 1,
       },
     },
   });

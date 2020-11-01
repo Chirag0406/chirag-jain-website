@@ -24,7 +24,8 @@
     }
     &:hover {
       background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0 5px 5px 0 #149ddd;
+      transform: scale(1.02);
     }
   }
 }

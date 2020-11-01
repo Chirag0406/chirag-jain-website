@@ -12052,7 +12052,8 @@ section {
     color: #000; }
   .skills .icon-box:hover {
     background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12); }
+    box-shadow: 0 5px 5px 0 #149ddd;
+    transform: scale(1.02); }
 
 /*--------------------------------------------------------------
 # Resume
@@ -12104,46 +12105,42 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.service-box {
-  background-color: #fff;
-  padding: 2.5rem 1.3rem;
-  border-radius: 1rem;
+.services .service-col {
   margin-bottom: 3rem; }
 
-.ico-circle {
+.services .service-box {
+  background-color: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  height: 100%; }
+  .services .service-box:hover .ico-circle {
+    transition: all 500ms ease;
+    color: #fff;
+    background-color: #149ddd;
+    box-shadow: 0 0 0 5px #cde1f8; }
+  .services .service-box .service-ico {
+    margin-bottom: 1rem;
+    color: #1e1e1e; }
+  .services .service-box .ico-circle {
+    transition: all 500ms ease; }
+  .services .service-box .s-title {
+    text-align: center;
+    padding: 0.4rem 0; }
+  .services .service-box .s-description {
+    color: #4e4e4e; }
+
+.services .ico-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 50%;
   line-height: 1.55;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 0 0 10px #149ddd;
-  display: block; }
-
-.service-box:hover .ico-circle {
-  transition: all 500ms ease;
-  color: #fff;
-  background-color: #149ddd;
-  box-shadow: 0 0 0 10px #cde1f8; }
-
-.service-box .service-ico {
-  margin-bottom: 1rem;
-  color: #1e1e1e; }
-
-.service-box .ico-circle {
-  transition: all 500ms ease; }
-
-.service-box .s-title {
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.4rem 0; }
-
-.service-box .s-description {
-  color: #4e4e4e; }
+  box-shadow: 0 0 0 5px #149ddd; }
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -12156,13 +12153,11 @@ section {
     width: 90px;
     border-radius: 50%;
     margin: 0 auto; }
-  .testimonials .testimonial-item h3 {
-    font-size: 18px;
+  .testimonials .testimonial-item h5 {
     font-weight: bold;
     margin: 10px 0 5px 0;
     color: #111; }
-  .testimonials .testimonial-item h4 {
-    font-size: 14px;
+  .testimonials .testimonial-item h6 {
     color: #999;
     margin: 0; }
   .testimonials .testimonial-item .fa-quote-left {
