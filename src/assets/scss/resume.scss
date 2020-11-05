@@ -53,3 +53,12 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .resume {
+    .summary-continued {
+      padding-bottom: 40px;
+      margin-bottom: 0px;
+    }
+  }
+}

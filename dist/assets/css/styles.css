@@ -12102,6 +12102,11 @@ section {
     background: #fff;
     border: 2px solid #1f5297; }
 
+@media (max-width: 991px) {
+  .resume .summary-continued {
+    padding-bottom: 40px;
+    margin-bottom: 0px; } }
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
